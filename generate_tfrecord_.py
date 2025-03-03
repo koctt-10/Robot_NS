@@ -27,10 +27,3 @@ def generate_tfrecord(output_path, image_paths, annotations_list):
         writer.write(tf_example.SerializeToString())
     writer.close()
 
-# Пример использования
-image_paths = ['path/to/image1.jpg', 'path/to/image2.jpg']
-annotations_list = [
-    [{'xmin': 0.1, 'xmax': 0.5, 'ymin': 0.2, 'ymax': 0.6, 'class': 'cube', 'label': 1}],
-    [{'xmin': 0.3, 'xmax': 0.7, 'ymin': 0.4, 'ymax': 0.8, 'class': 'pipe', 'label': 2}]
-]
-generate_tfrecord('train.record', image_paths, annotations_list)
